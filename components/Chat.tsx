@@ -9,7 +9,7 @@ const COOKIE_NAME = 'nextjs-example-ai-chat-gpt3'
 export const initialMessages: ChatGPTMessage[] = [
   {
     role: 'assistant',
-    content: "My name is Forrest, Forrest Gump. What's your name?",
+    content: "Welcome to our compensation website. Please share with us what tasks you didn't complete at work and provide reasons why you believe you deserve compensation?",
   },
 ]
 
@@ -123,7 +123,7 @@ export function Chat() {
 
       {messages.length < 2 && (
         <span className="mx-auto flex flex-grow text-gray-600 clear-both">
-          Type a message to start the conversation with Forrest
+          Type a message to start the conversation with Andy - your self evaluation bot
         </span>
       )}
       <InputMessage
