@@ -1,5 +1,7 @@
 import { Text, Page } from '@vercel/examples-ui'
 import { Chat } from '../components/Chat'
+import Landing from '../components/wellt'
+import NavBar from '../components/NavBar'
 
 function Home() {
   return (
@@ -13,11 +15,20 @@ function Home() {
 
       <section className="flex flex-col gap-3">
         <div className="flex justify-center">
-          <div className="bg-white rounded-lg shadow-lg p-6">
+          <div className="bg-white rounded-lg shadow-lg p-4">
             <Chat />
           </div>
         </div>
       </section>
+
+      <section className="flex flex-col gap-3">
+        <div className="flex justify-center ">
+          <div className="bg-white rounded-lg shadow-lg p-6 ">
+          <NavBar />
+            </div>
+          </div>
+       </section>
+
     </Page>
   )
 }
