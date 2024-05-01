@@ -2,8 +2,8 @@ import React from 'react';
 
 const Description = () => {
   return (
-    <div className="bg-gradient-to-r from-blue-500 to-purple-600 py-12 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-7xl mx-auto text-center">
+    <div className="px-4 sm:px-6 lg:px-8">
+      <div className="max-w-5xl mx-auto text-center">
         <h2 className="text-5xl font-extrabold text-black text-teal-900 sm:text-5xl">
           Welcome to Dama
         </h2>

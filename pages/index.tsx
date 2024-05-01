@@ -5,10 +5,6 @@ import NavBar from '../components/NavBar';
 import  ConectDama  from '../components/ConectDama';
 import Description from '../components/Description';
 
-
-
-
-
 function Home() {
   return (
   <Page style={{ backgroundColor: '#f0f3ff' }}>
@@ -18,7 +14,7 @@ function Home() {
       </search>
       <section className="flex flex-col gap-6">
         <Text variant="h1" className="text-center text-3xl font-bold text-teal-900">Empowering Your Growth - Journey of Self-Evaluation</Text>
-        <Text className="text-center text-xl text-zinc-600">
+        <Text className="text-center text-xl sm:px-6 lg:px-8 text-zinc-600 mt-3">
           Welcome to the Self-Evaluation Service, where we empower you to assess your performance and possibly earn special recognition from your company. Kindly express in the chat below why you feel deserving of special recognition. Please be aware that all transactions will require authorization from your direct manager.
         </Text>
       </section>

@@ -19,6 +19,7 @@ export default function App() {
     });
 
     const QUICKNODE_ENDPOINT = process.env.HTTP_PROVIDER_URL
+    
     const provider = new ethers.JsonRpcProvider(QUICKNODE_ENDPOINT)
     //const signer = new ethers.Wallet(PRIVATE_KEY, provider)
     //const userAddress = signer.address
@@ -30,11 +31,15 @@ export default function App() {
 
       try {
       if(window.ethereum) {
-      const erc20 = new ethers.Contract(contractAddress, damaerc20ABI.abi , provider );
+      const erc20 = new ethers.Contract(contractAddress, damaerc20ABI , provider );
   
       const tokenName = await erc20.name();
       const tokenSymbol = await erc20.symbol();
       const totalSupply = await erc20.totalSupply();
+
+      console.log(tokenName)
+      console.log(tokenSymbol)
+      console.log(totalSupply)
 
       setContractInfo({
         address: contractAddress,
@@ -118,7 +123,7 @@ const getMyBalance = async () => {
                 <div className="mt-8"></div>
                 <div className="p-3.5">
                   <Button
-                    onClick={getMyBalance}
+                    // onClick={getMyBalance}
                     type="submit"
                     className="btn btn-primary submit-button focus:ring focus:outline-none w-full"
                   >
