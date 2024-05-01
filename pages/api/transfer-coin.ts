@@ -12,14 +12,11 @@ async function transferFundsToAddress(address: string , amount: number) {
 
     // Set up signer with private key or mnemonic phrase
     const signer = new ethers.Wallet("5d5fea13e640212648ece95dd41d77da39e671d24ccc546d1c0c765affb5d659", provider);
-
     // Contract address and ABI
     const contractAddress = "0xacC2011537d02d139A074174a32a801332D0CDc2";
     const abi = damaerc20ABI;
-    
     // Connect to the contract
     const contract = new ethers.Contract(contractAddress, abi, signer);
-
     // Call the contract's transfer function
     try {
         const tx = await contract.transfer(address, amount);

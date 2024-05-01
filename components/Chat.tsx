@@ -10,7 +10,9 @@ export const initialMessages: ChatGPTMessage[] = [
   {
     role: 'assistant',
     content: "Welcome to our compensation website. Please share with us what tasks you didn't complete at work and provide reasons why you believe you deserve compensation?",
+    
   },
+
 ]
 
 const InputMessage = ({ input, setInput, sendMessage }: any) => (
@@ -122,7 +124,7 @@ export function Chat() {
       {loading && <LoadingChatLine />}
 
       {messages.length < 2 && (
-        <span className="mx-auto flex flex-grow text-gray-600 clear-both">
+        <span className="mx-auto flex flex-grow text-gray-800 text-lg clear-both">
           Type a message to start the conversation with Andy - your self evaluation bot
         </span>
       )}

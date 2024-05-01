@@ -1,16 +1,10 @@
 import "@ethersproject/providers";
 import "@metamask/sdk-react";
 import "@quicknode/sdk";
-
 import { useState, useEffect } from "react";
 import { ethers } from "ethers";
 import { Button } from './Button';
 import damaerc20ABI from "../damaERC20.json";
-
-
-
-
-
 
 export default function App() {
     const [contractInfo, setContractInfo] = useState({
@@ -25,7 +19,6 @@ export default function App() {
     });
 
     const QUICKNODE_ENDPOINT = process.env.HTTP_PROVIDER_URL
-    //const PRIVATE_KEY = (process.env.PRIVATE_KEY) as string
     const provider = new ethers.JsonRpcProvider(QUICKNODE_ENDPOINT)
     //const signer = new ethers.Wallet(PRIVATE_KEY, provider)
     //const userAddress = signer.address
@@ -37,8 +30,7 @@ export default function App() {
 
       try {
       if(window.ethereum) {
-      //const provider = new JsonRpcProvider (QUICKNODE_ENDPOINT);
-      const erc20 = new ethers.Contract(contractAddress, damaerc20ABI , provider );
+      const erc20 = new ethers.Contract(contractAddress, damaerc20ABI.abi , provider );
   
       const tokenName = await erc20.name();
       const tokenSymbol = await erc20.symbol();
@@ -60,7 +52,8 @@ export default function App() {
 };
 
 const getMyBalance = async () => {
-  const provider = new ethers.providers.Web3Provider(window.ethereum);
+  const QUICKNODE_ENDPOINT = process.env.HTTP_PROVIDER_URL
+  const provider = new ethers.JsonRpcProvider(QUICKNODE_ENDPOINT)
   await provider.send("eth_requestAccounts", []);
   const erc20 = new ethers.Contract(contractInfo.address, damaerc20ABI, provider);
   const signer = await provider.getSigner();
@@ -152,6 +145,7 @@ const getMyBalance = async () => {
                   </div>
                 </div>
               </div>
+
               
             </form>
             
@@ -187,18 +181,6 @@ const getMyBalance = async () => {
                     </Button>
                   </footer>
                 </form>
-              </div>
-            </div>
-          </div>
-          <div>
-            <div className="">
-              <div className="">
-                <h1 className="">
-                
-                </h1>
-                <p>
-                  {/* <TxList txs={txs} /> */}
-                </p>
               </div>
             </div>
           </div>

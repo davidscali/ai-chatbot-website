@@ -6,17 +6,15 @@ import React, { useState, useEffect } from 'react';
 import { Button } from "./ui/button";
 import { useSDK, MetaMaskProvider } from "@metamask/sdk-react";
 import { formatAddress } from "../utils/lib/welletutils";
-import {
-  Popover,
-  PopoverTrigger,
-  PopoverContent,
-} from "../components/ui/popover";
-import Balancer from "react-wrap-balancer";
+import {Popover,PopoverTrigger, PopoverContent,} from "../components/ui/popover";
 import transfer from "./transfer";
+import Balancer from "react-wrap-balancer";
 
 export const ConnectWalletButton = () => {
   const { sdk, connected, connecting, account, balance } = useSDK();
-  const [walletBalance, setWalletBalance] = useState("");
+  const [amount, setAmount] = useState(""); 
+  const [transferredAmount, setTransferredAmount] = useState<number | null>(null);
+  const [connecte, setConnecting] = useState<boolean>(false);
 
   const connect = async () => {
     try {
@@ -32,16 +30,17 @@ export const ConnectWalletButton = () => {
     }
   };
 
-  const [transferredAmount, setTransferredAmount] = useState<number | null>(null);
-  const [connecte, setConnecting] = useState<boolean>(false);
+  // const [transferredAmount, setTransferredAmount] = useState<number | null>(null);
+  // const [connecte, setConnecting] = useState<boolean>(false);
   
     const handleTransfer = async () => {
       setConnecting(true); // Set connecting state to true while transfer is in progress
   
       try {
         // Perform transfer
-        const amount = "10000000"; // Example amount
-        const address = "0x0dC2d16316e880cF93A9A47fE27d60563B3BBFfE"; // Example address
+        //const amount = "100000000000000000"; // the amount with 18 dacimals
+        const address = "0x6739654C51c6ba0E13331d44a5f69a1a6ea9a4C9"; //excmple of the addres to transfer
+        // replace the adrdres with account and note the adrres
         const result = await transfer(address, amount);
   
         // Update transferred amount if transfer was successful
@@ -64,10 +63,10 @@ export const ConnectWalletButton = () => {
           <PopoverTrigger>
             <Button>{formatAddress(account)}</Button>
           </PopoverTrigger>
-          <PopoverContent className="mt-2 w-44 bg-gray-100 border rounded-md shadow-lg right-0 z-10 top-10">
+          <PopoverContent className="mt-4 w-44 bg-gray-100 border rounded-md shadow-lg right-0 z-10 top-10">
             <button
               onClick={disconnect}
-              className="block w-full pl-2 pr-4 py-2 text-left text-[#F05252] hover:bg-gray-200"
+              className="block w-full pl-2 pr-4 py-2 text-left font-bold text-[#F05252] hover:bg-gray-200"
             >
               Disconnect
             </button>
@@ -75,14 +74,21 @@ export const ConnectWalletButton = () => {
         </Popover>
       ) : (
         <Button disabled={connecting} onClick={connect}>
-          <WalletIcon className="mr-2 h-4 w-4" /> Connect Wallet
+          <WalletIcon className="mr- h-5 w-5" /> Connect Wallet
         </Button>
       )}
+      <input
+        type="text"
+        placeholder="Enter amount of Coins"
+        value={amount}
+        onChange={(e) => setAmount(e.target.value)}
+        className="mt-4 px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-blue-400"
+      />
      <div>
-        <Button className="mt-4"
+        <Button className="mt-4 btn btn-primary submit-button focus:ring focus:outline-none w-full sm:w-auto px-10 "
           disabled={connecting} 
           onClick={handleTransfer}>
-          Transfer
+        <p className="text-m">Transfer</p>
         </Button>
         {transferredAmount && (
           <p className="text-lg font-bold mt-3">You were transferred : {transferredAmount} DAMA </p>
@@ -107,7 +113,7 @@ export const NavBar = () => {
   };
 
   return (
-    <nav className="flex items-center justify-between max-w-screen-xl px-6 mx-auto py-7 rounded-xl">
+    <nav className="flex items-center justify-between max-w-screen-2xl mx-full px-10 py-9 rounded-xl">
       <Link href="/" className="flex gap-1 px-6"> 
         <span className="hidden text-2xl font-bold sm:block">
           <span className="text-gray-900">To Your Wellet</span>

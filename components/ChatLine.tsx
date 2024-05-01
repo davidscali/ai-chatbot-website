@@ -16,7 +16,7 @@ export const LoadingChatLine = () => (
   <div className="flex min-w-full animate-pulse px-4 py-5 sm:px-6">
     <div className="flex flex-grow space-x-3">
       <div className="min-w-0 flex-1">
-        <p className="font-large text-xxl text-gray-900">
+        <p className="font-large text-2xl text-gray-900">
           <a href="#" className="hover:underline">
             Andy
           </a>
