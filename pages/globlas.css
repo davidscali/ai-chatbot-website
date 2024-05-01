@@ -4,8 +4,9 @@
  
 @layer base {
   :root {
-    --background: 0 0% 100%;
+    --background: 10 0% 100%;
     --foreground: 240 10% 3.9%;
+    --background:rgb(99, 99, 193);
 
     --card: 0 0% 100%;
     --card-foreground: 240 10% 3.9%;
@@ -65,7 +66,11 @@
     --ring: 240 4.9% 83.9%;
   }
 }
- 
+
+.bg-light-blue {
+  background-color: #5d7c98; /* Light blue color */
+}
+
 @layer base {
   * {
     @apply border-border;

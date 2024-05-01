@@ -1,11 +1,16 @@
-import { Text, Page } from '@vercel/examples-ui'
-import { Chat } from '../components/Chat'
-import Landing from '../components/wellt'
-import NavBar from '../components/NavBar'
+import React, { useState } from 'react';
+import { Text, Page } from '@vercel/examples-ui';
+import { Chat } from '../components/Chat';
+import NavBar from '../components/NavBar';
+import  ConectDama  from '../components/ConectDama';
+
 
 function Home() {
+
   return (
-    <Page className="flex flex-col gap-12">
+    // <Page style={{ backgroundColor: '#f0f3ff' }}>
+
+    <Page className="background-gray flex flex-col gap-12">
       <section className="flex flex-col gap-6">
         <Text variant="h1" className="text-center text-3xl font-bold text-teal-800">Welcome to Self Evaluation</Text>
         <Text className="text-center text-lg text-zinc-600">
@@ -21,7 +26,7 @@ function Home() {
         </div>
       </section>
 
-      <section className="flex flex-col gap-3">
+      <section className="flex flex-col gap-12">
         <div className="flex justify-center ">
           <div className="bg-white rounded-lg shadow-lg p-6 ">
           <NavBar />
@@ -29,8 +34,19 @@ function Home() {
           </div>
        </section>
 
+       <section className="flex flex-col gap-12">
+       <div className="flex justify-center ">
+       <div className="w-full bg-white rounded-lg shadow-lg p-8 ">
+        <ConectDama />
+        </div>
+        </div>
+        </section>
     </Page>
+    
   )
+  
 }
 
-export default Home
+export default Home;
+
+
