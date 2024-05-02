@@ -1,10 +1,5 @@
 {
   "buildCommand": "pnpm turbo build",
-  "ignoreCommand": "pnpm dlx turbo-ignore",
-  "functions": {
-    "api/**/*.js": {
-      "runtime": "nodejs14.x"
-    }
-  }
+  "ignoreCommand": "pnpm dlx turbo-ignore"
 }
 
