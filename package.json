@@ -27,7 +27,8 @@
     "react-cookie": "^4.1.1",
     "react-dom": "latest",
     "react-wrap-balancer": "^0.1.5",
-    "tailwind-merge": "^2.3.0"
+    "tailwind-merge": "^2.3.0",
+    "web3": "^4.8.0"
   },
   "devDependencies": {
     "@types/node": "^17.0.45",

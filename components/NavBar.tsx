@@ -8,7 +8,6 @@ import { useSDK, MetaMaskProvider } from "@metamask/sdk-react";
 import { formatAddress } from "../utils/lib/welletutils";
 import {Popover,PopoverTrigger, PopoverContent,} from "../components/ui/popover";
 import transfer from "./transfer";
-import Balancer from "react-wrap-balancer";
 
 export const ConnectWalletButton = () => {
   const { sdk, connected, connecting, account, balance } = useSDK();
