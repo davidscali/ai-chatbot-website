@@ -11,12 +11,12 @@ const Description = () => {
           A marketing and advertising company specializing in website construction.
         </p>
         <p className="mt-3 text-xl text-black text-teal-900 sm:mt-4">
-          At Dama, we value our employees and believe in transparency and self-evaluation. That's why we provide our employees with the opportunity to evaluate themselves openly. 
+          At Dama, we value our employees and believe in transparency and self-evaluation. That is why we provide our employees with the opportunity to evaluate themselves openly. 
           We reward them with virtual currency called DAMA, which they can use to purchase various benefits, such as extra days off, gifts from a dedicated website, home essentials, and more.
         </p>
         <p className="mt-3 text-xl text-black text-teal-900 sm:mt-4">
         At Dama, we believe in providing incentives for our employees to encourage their best work. We understand the importance of transparency in the workplace, and we strive to create an environment where our employees feel appreciated for their contributions. 
-        We want our employees to have a positive experience at work, knowing that their efforts are recognized and valued. That's why we offer them the opportunity to evaluate themselves openly and receive rewards in the form of virtual currency called DAMA. 
+        We want our employees to have a positive experience at work, knowing that their efforts are recognized and valued. That is why we offer them the opportunity to evaluate themselves openly and receive rewards in the form of virtual currency called DAMA. 
         With DAMA, our employees can not only purchase tangible rewards but also enjoy the intangible benefits of feeling valued and appreciated.
         </p>
       </div>

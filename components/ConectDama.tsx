@@ -1,6 +1,7 @@
 import "@ethersproject/providers";
 import "@metamask/sdk-react";
 import "@quicknode/sdk";
+
 import { useState, useEffect } from "react";
 import { ethers } from "ethers";
 import { Button } from './Button';
@@ -49,17 +50,17 @@ export default function App() {
       });
 
     } else {
-      console.error("Metamask not installed or not accessible");
+      console.error('Metamask not installed or not accessible');
     }
   } catch (error) {
-    console.error("Error retrieving contract information:", error);
+    console.error('Error retrieving contract information:', error);
   }
 };
 
 const getMyBalance = async () => {
   const QUICKNODE_ENDPOINT = process.env.HTTP_PROVIDER_URL
   const provider = new ethers.JsonRpcProvider(QUICKNODE_ENDPOINT)
-  await provider.send("eth_requestAccounts", []);
+  await provider.send('eth_requestAccounts', []);
   const erc20 = new ethers.Contract(contractInfo.address, damaerc20ABI, provider);
   const signer = await provider.getSigner();
   const signerAddress = await signer.getAddress();

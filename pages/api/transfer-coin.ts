@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { ethers } from 'ethers';
 import damaerc20ABI from "/workspace/ai-chatbot-website/damaERC20.json";
 import { NextApiRequest, NextApiResponse } from 'next';
