@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import { Text, Page } from '@vercel/examples-ui';
 import { Chat } from '../components/Chat';
 import NavBar from '../components/NavBar';
-import  ConectDama  from '../components/ConectDama';
 import Description from '../components/Description';
+import ConectDama from "../components/ConectDama";
 
 
 function Home() {
@@ -22,7 +22,7 @@ function Home() {
     
       <section className="flex flex-col gap-3">
         <div className="flex justify-center">
-          <div className="bg-white rounded-lg shadow-lg p-4">
+          <div className="bg-white rounded-lg shadow-lg p-6 ">
             <Chat />
           </div>
         </div>
@@ -30,16 +30,16 @@ function Home() {
       
       <section className="flex flex-col px-6 gap-12">
         <div className="flex justify-center">
-          <div className="bg-white rounded-lg shadow-lg p-6 ">
+          <div className="bg-white rounded-lg shadow-lg p-6  mt-5">
           <NavBar />
             </div>
           </div>
        </section>
 
-       <section className="flex flex-col gap-10">
+       <section className="flex flex-col max-w-screen-3xl mx-full py-4 rounded-xl">
       <div className="flex justify-center ">
-        <div className="w-full rounded-lg shadow-lg p-8 ">
-        <ConectDama />
+        <div className="w-full rounded-lg shadow-m">
+        <ConectDama  />
         </div>
       </div>
     </section>
