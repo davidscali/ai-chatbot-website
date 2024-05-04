@@ -1,6 +1,4 @@
 "use client";
-
-import Link from "next/link";
 import WalletIcon from "../public/WalletIcon";
 import React, { useState, useEffect } from 'react';
 import { Button } from "./ui/button";
@@ -8,7 +6,9 @@ import { useSDK, MetaMaskProvider } from "@metamask/sdk-react";
 import { formatAddress } from "../utils/lib/welletutils";
 import {Popover,PopoverTrigger, PopoverContent,} from "../components/ui/popover";
 import transfer from "./transfer";
-import Balancer from "react-wrap-balancer";
+import { ethers } from 'ethers';
+
+
 
 export const ConnectWalletButton = () => {
   const { sdk, connected, connecting, account, balance } = useSDK();
@@ -34,18 +34,31 @@ export const ConnectWalletButton = () => {
   // const [connecte, setConnecting] = useState<boolean>(false);
   
     const handleTransfer = async () => {
+      if (!connected) {
+        alert("Please connect your wallet before transferring tokens.");
+        return;
+      }
       setConnecting(true); // Set connecting state to true while transfer is in progress
-  
       try {
         // Perform transfer
-        //const amount = "100000000000000000"; // the amount with 18 dacimals
         const address = "0x6739654C51c6ba0E13331d44a5f69a1a6ea9a4C9"; //excmple of the addres to transfer
+
         // replace the adrdres with account and note the adrres
         const result = await transfer(address, amount);
   
         // Update transferred amount if transfer was successful
         if (true) {
           setTransferredAmount(parseInt(amount)); // Convert amount to number and set transferred amount
+          // alert("Successful transfer!");
+
+          await window.ethereum?.request({
+            method: 'wallet_requestPermissions',
+            params: [
+              {
+                eth_accounts: {}
+              }
+            ]
+          });
         } else {
           console.error('Failed to transfer funds:');
         }
@@ -114,12 +127,10 @@ export const NavBar = () => {
 
   return (
     <nav className="flex items-center justify-between max-w-screen-2xl mx-full px-10 py-9 rounded-xl">
-      <Link href="/" className="flex gap-1 px-6"> 
-        <span className="hidden text-2xl font-bold sm:block">
-          <span className="text-gray-900">To Your Wellet</span>
+        <span className="hidden text-2xl font-bold px-10 text-gray-900 sm:block mb-20">
+        Connect to Your Wellet
         </span>
-      </Link>
-      <div className="flex gap-4 px-6">
+      <div className="flex gap-4">
         <MetaMaskProvider debug={false} sdkOptions={sdkOptions}>
           <ConnectWalletButton />
         </MetaMaskProvider>
