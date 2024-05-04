@@ -5,6 +5,7 @@ import NavBar from '../components/NavBar';
 import  ConectDama  from '../components/ConectDama';
 import Description from '../components/Description';
 
+
 function Home() {
   return (
   <Page style={{ backgroundColor: '#f0f3ff' }}>

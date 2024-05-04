@@ -1,6 +1,6 @@
 import "@ethersproject/providers";
 import "@metamask/sdk-react";
-import "@quicknode/sdk";
+//import "@quicknode/sdk";
 
 import { useState, useEffect } from "react";
 import { ethers } from "ethers";
@@ -19,9 +19,12 @@ export default function App() {
       balance: "-"
     });
 
-    const QUICKNODE_ENDPOINT = process.env.HTTP_PROVIDER_URL
-    
-    const provider = new ethers.JsonRpcProvider(QUICKNODE_ENDPOINT)
+    // const QUICKNODE_ENDPOINT = process.env.HTTP_PROVIDER_URL
+    // const provider = new ethers.JsonRpcProvider(QUICKNODE_ENDPOINT)
+
+    const INFURA_ENDPOINT = process.env.INFURA_ENDPOINT;
+    const provider = new ethers.JsonRpcProvider(INFURA_ENDPOINT);
+
     //const signer = new ethers.Wallet(PRIVATE_KEY, provider)
     //const userAddress = signer.address
 

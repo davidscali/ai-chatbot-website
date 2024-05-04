@@ -11,7 +11,7 @@ const transfer = async (address: string, amount: string) => {
         });
 
         if (!response.ok) {
-            throw new Error('Failed to transfer funds');
+            throw new Error('Failed to transfer funds - Check if your conect your wellet');
         }
 
         console.log('Transfer request sent successfully');
