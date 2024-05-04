@@ -4,11 +4,15 @@ import { Chat } from '../components/Chat';
 import NavBar from '../components/NavBar';
 import Description from '../components/Description';
 import ConectDama from "../components/ConectDama";
+import image from "/workspace/ai-chatbot-website/public/DAMA.png"
+
 
 
 function Home() {
   return (
+    
   <Page style={{ backgroundColor: '#f0f3ff' }}>
+    
     <Page className=" flex flex-col gap-12">
       <search>
         <Description/>
