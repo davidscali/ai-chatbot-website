@@ -1,4 +1,13 @@
+<<<<<<< HEAD
 import React, { useState } from 'react';
+=======
+import "@ethersproject/providers";
+import "@metamask/sdk-react";
+//import "@quicknode/sdk";
+
+import { useState, useEffect } from "react";
+import { ethers } from "ethers";
+>>>>>>> 4ac66ed21f8dfdf539a941fc023fa6471483ed52
 import { Button } from './Button';
 
 const ConectDama = () => {
@@ -9,7 +18,23 @@ const ConectDama = () => {
         toBalance: '-',
         reamintoken: '',
     });
+<<<<<<< HEAD
     const [showTextBox, setShowTextBox] = useState(false); 
+=======
+    const [balanceInfo, setBalanceInfo] = useState({
+      address: "-",
+      balance: "-"
+    });
+
+    // const QUICKNODE_ENDPOINT = process.env.HTTP_PROVIDER_URL
+    // const provider = new ethers.JsonRpcProvider(QUICKNODE_ENDPOINT)
+
+    const INFURA_ENDPOINT = process.env.INFURA_ENDPOINT;
+    const provider = new ethers.JsonRpcProvider(INFURA_ENDPOINT);
+
+    //const signer = new ethers.Wallet(PRIVATE_KEY, provider)
+    //const userAddress = signer.address
+>>>>>>> 4ac66ed21f8dfdf539a941fc023fa6471483ed52
 
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();

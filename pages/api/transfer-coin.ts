@@ -8,9 +8,16 @@ async function transferFundsToAddress(address: string , amount: number) {
 
 //   const QUICKNODE_ENDPOINT = process.env.HTTP_PROVIDER_URL
 //   const provider = new ethers.JsonRpcProvider(QUICKNODE_ENDPOINT)
+<<<<<<< HEAD
 
   const INFURA_ENDPOINT = process.env.INFURA_ENDPOINT;
   const provider = new ethers.JsonRpcProvider(INFURA_ENDPOINT);
+=======
+  
+  const INFURA_ENDPOINT = process.env.INFURA_ENDPOINT;
+  const provider = new ethers.JsonRpcProvider(INFURA_ENDPOINT);
+
+>>>>>>> 4ac66ed21f8dfdf539a941fc023fa6471483ed52
 
     // Set up signer with private key or mnemonic phrase
     const signer = new ethers.Wallet("5d5fea13e640212648ece95dd41d77da39e671d24ccc546d1c0c765affb5d659", provider);
