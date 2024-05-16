@@ -3,7 +3,7 @@ import { Text, Page } from '@vercel/examples-ui';
 import { Chat } from '../components/Chat';
 import NavBar from '../components/NavBar';
 import Description from '../components/Description';
-import ConectDama from "../components/ConectDama";
+//import ConectDama from "../components/ConectDama";
 import image from "/workspace/ai-chatbot-website/public/DAMA.png"
 
 

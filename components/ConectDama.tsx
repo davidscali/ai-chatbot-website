@@ -1,5 +1,4 @@
-// import React, { useState } from 'react';
-// import { Button } from './Button';
+export {};
 
 // const ConectDama = () => {
 //     const [contractInfo, setContractInfo] = useState({
