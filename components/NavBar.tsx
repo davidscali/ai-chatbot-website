@@ -86,7 +86,7 @@ export const ConnectWalletButton = () => {
         </Popover>
       ) : (
         <Button disabled={connecting} onClick={connect}>
-          <WalletIcon className="mr- h-5 w-5" /> Connect Wallet
+          <WalletIcon className="mr- h-5 w-5" /> Connect Wallet:
         </Button>
       )}
       <input
