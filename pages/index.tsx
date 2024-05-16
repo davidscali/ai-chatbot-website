@@ -41,13 +41,13 @@ function Home() {
           </div>
        </section>
 
-       <section className="flex flex-col max-w-screen-3xl mx-full py-4 rounded-xl">
+       {/* <section className="flex flex-col max-w-screen-3xl mx-full py-4 rounded-xl">
       <div className="flex justify-center ">
         <div className="w-full rounded-lg shadow-m">
         <ConectDama  />
         </div>
       </div>
-    </section>
+    </section> */}
         </Page>
     </Page>
   )
