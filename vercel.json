@@ -1,5 +1,4 @@
 {
-  "buildCommand": "npm run build",
-  "ignoreCommand": "npm run ignore"
+  "buildCommand": "npm run build"
 }
 
