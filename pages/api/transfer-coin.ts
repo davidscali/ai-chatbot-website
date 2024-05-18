@@ -1,13 +1,10 @@
+import { NextApiRequest, NextApiResponse } from 'next';
 import { ethers } from 'ethers';
 import damaerc20ABI from "/workspace/ai-chatbot-website/damaERC20.json";
-import { NextApiRequest, NextApiResponse } from 'next';
-//import "@quicknode/sdk";
+
 
 // Function to transfer funds to an address
 async function transferFundsToAddress(address: string , amount: number) {
-
-//   const QUICKNODE_ENDPOINT = process.env.HTTP_PROVIDER_URL
-//   const provider = new ethers.JsonRpcProvider(QUICKNODE_ENDPOINT)
 
   const INFURA_ENDPOINT = process.env.INFURA_ENDPOINT;
   const provider = new ethers.JsonRpcProvider(INFURA_ENDPOINT);
