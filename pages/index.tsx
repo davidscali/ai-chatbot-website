@@ -3,8 +3,7 @@ import { Text, Page } from '@vercel/examples-ui';
 import { Chat } from '../components/Chat';
 import NavBar from '../components/NavBar';
 import Description from '../components/Description';
-//import ConectDama from "../components/ConectDama";
-import image from "/workspace/ai-chatbot-website/public/DAMA.png"
+import ConectDama from "../components/ConectDama";
 
 
 
@@ -41,13 +40,13 @@ function Home() {
           </div>
        </section>
 
-       {/* <section className="flex flex-col max-w-screen-3xl mx-full py-4 rounded-xl">
+       <section className="flex flex-col max-w-screen-3xl mx-full py-4 rounded-xl">
       <div className="flex justify-center ">
         <div className="w-full rounded-lg shadow-m">
         <ConectDama  />
         </div>
       </div>
-    </section> */}
+    </section>
         </Page>
     </Page>
   )
