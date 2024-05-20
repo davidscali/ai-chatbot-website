@@ -1,6 +1,6 @@
 import { NextApiRequest, NextApiResponse } from 'next';
 import { ethers } from 'ethers';
-import damaerc20ABI from '/workspace/ai-chatbot-website/damaERC20.json';
+import damaerc20ABI from '/damaERC20.json';
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse<any>) {
     if (req.method === 'POST') {

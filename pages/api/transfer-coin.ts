@@ -1,6 +1,6 @@
 import { NextApiRequest, NextApiResponse } from 'next';
 import { ethers } from 'ethers';
-import damaerc20ABI from "/workspace/ai-chatbot-website/damaERC20.json";
+import damaerc20ABI from "/damaERC20.json";
 
 
 // Function to transfer funds to an address
