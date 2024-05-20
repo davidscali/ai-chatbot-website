@@ -36,7 +36,6 @@ const ConectDama = () => {
             console.error('Error fetching contract information:', error);
         }
     };
-    
     return (
       <div className="grid grid-cols-1 gap-1 md:grid-cols-1">
       <div>
