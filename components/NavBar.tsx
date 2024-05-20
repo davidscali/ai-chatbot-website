@@ -133,6 +133,7 @@ export const NavBar = () => {
         <MetaMaskProvider debug={false} sdkOptions={sdkOptions}>
           <ConnectWalletButton />
         </MetaMaskProvider>
+        
       </div>
     </nav>
   );
