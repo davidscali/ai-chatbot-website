@@ -9,7 +9,7 @@ const COOKIE_NAME = 'nextjs-example-ai-chat-gpt3'
 export const initialMessages: ChatGPTMessage[] = [
   {
     role: 'assistant',
-    content: "Welcome to our compensation website. Please share with us what tasks you didnt complete at work and provide reasons why you believe you deserve compensation?",
+    content: "Welcome to our compensation website. Please share with us what tasks you didn't complete at work and provide reasons why you believe you deserve compensation?",
     
   },
 
@@ -69,7 +69,7 @@ export function Chat() {
     ]
     setMessages(newMessages)
     const last10messages = newMessages.slice(-10) // remember last 10 messages
-    try {
+
     const response = await fetch('/api/chat', {
       method: 'POST',
       headers: {
@@ -88,21 +88,32 @@ export function Chat() {
     }
 
     // This data is a ReadableStream
-    const data = await response.json()
+    const data = response.body
+    if (!data) {
+      return
+    }
+
+    const reader = data.getReader()
+    const decoder = new TextDecoder()
+    let done = false
+
+    let lastMessage = ''
+
+    while (!done) {
+      const { value, done: doneReading } = await reader.read()
+      done = doneReading
+      const chunkValue = decoder.decode(value)
+
+      lastMessage = lastMessage + chunkValue
 
       setMessages([
         ...newMessages,
-        { role: 'assistant', content: data } as ChatGPTMessage,
+        { role: 'assistant', content: lastMessage } as ChatGPTMessage,
       ])
-    } catch (error) {
-      console.error('Error sending message:', error)
-      // Handle error
-    } finally {
+
       setLoading(false)
     }
-} 
-  
-
+  }
 
   return (
     <div className="rounded-2xl border-gray-300  lg:border lg:p-6">
