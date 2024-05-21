@@ -1,4 +1,4 @@
-// #### chat.ts ###### //
+//  chat.ts  //
 
 // import { type ChatGPTMessage } from '../../components/ChatLine'
 // import { OpenAIStream, OpenAIStreamPayload } from '../../utils/OpenAIStream'
@@ -148,7 +148,7 @@
 
 
 
-// #### chat.tsx ###### //
+//  chat.tsx  //
 
 // import { useEffect, useState } from 'react'
 // import { Button } from './Button'
