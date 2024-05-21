@@ -150,5 +150,4 @@ The final number of coins to be awarded to the employee.
 }
 }
 
-
 export default handler
