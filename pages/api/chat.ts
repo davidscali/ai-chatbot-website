@@ -11,12 +11,6 @@ export const config = {
 }
 
 const handler = async (req: Request): Promise<Response> => {
-  if (req.method !== 'POST') {
-    return new Response('Method Not Allowed', { status: 405 })
-  }
-
-  try {
-
   const body = await req.json()
 
   const messages: ChatGPTMessage[] = [
@@ -146,8 +140,5 @@ The final number of coins to be awarded to the employee.
   const stream = await OpenAIStream(payload)
   return new Response(stream)
 }
-catch (error) {
-  return new Response('Internal Server Error', { status: 500 })
-}
-}
+
 export default handler
