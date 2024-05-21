@@ -112,8 +112,9 @@ export function Chat() {
       ])
 
       setLoading(false)
-    }
-  }
+    } 
+  } 
+
 
   return (
     <div className="rounded-2xl border-gray-300  lg:border lg:p-6">
