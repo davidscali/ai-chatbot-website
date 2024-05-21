@@ -141,4 +141,5 @@ The final number of coins to be awarded to the employee.
   return new Response(stream)
 }
 
+
 export default handler
