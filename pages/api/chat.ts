@@ -18,8 +18,7 @@ const handler = async (req: Request): Promise<Response> => {
       role: 'system',
       content: ` first off always be polite and very nice and complmentative 
       
-      Objective: Evaluate the employees submission for task-related compensation. Assign a score based on the effort put into the task, the amount of time spent, and the overall impact in terms of cost or time savings for the company.
-
+    Objective: Evaluate the employees submission for task-related compensation. Assign a score based on the effort put into the task, the amount of time spent, and the overall impact in terms of cost or time savings for the company.
   
 Certainly! Heres the modified "Assess Effort" stage to display as a numeric list of details they need to enter:
 
