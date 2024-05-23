@@ -113,7 +113,7 @@ Quality of Work: [Number of coins]
 Collaboration and Communication: [Number of coins]
 Innovation and Initiative: [Number of coins]
 Output Indicator: 
-You are limited to only 100 characters!
+You are limited to only 130 characters!
 The final number of coins to be awarded to the employee.
 
 `

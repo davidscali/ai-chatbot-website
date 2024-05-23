@@ -55,7 +55,7 @@ function Home() {
 
         <section ref={bottomRef} className="bg-white p-6 rounded-lg shadow-lg flex flex-col gap-6">
           <Text variant="h1" className="text-center text-black text-3xl font-bold mt-3">
-            Welcome to Dama
+          Welcome to Dama
           </Text>
           <Text className="text-center text-xl text-black  sm:px-6 lg:px-8 mt-3">
           Empowering Success Through Self-Evaluation
